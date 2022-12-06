@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bellarmine Financials - Balance Sheet Calculator</title>
+        <link rel="stylesheet" href="css/properties.css"/>
+    </head>
+    <body>
+        <div class="header" id="header">
+            <h1>Bellarmine Financials - Balance Sheet Calculator</h1>
+        </div>
+            
+        <div class="container" id="container">
+            <div class="assets" id="assets"><h3>Assets</h3></div>
+            <div class="title-left" id="title-curr-assets">Current Assets
+                <br><br><button class="button-left" id="add-curr-assets" onclick="addCurrAssets()">Add Current Assets</button>
+
+                <div class="box-curr-assets" id="box-curr-assets">
+                    <form action="#">
+                    <div class="label" id="label1">
+                        <label for="label-curr-assets-cash">Cash:</label>
+                        <input type="text" id="input-curr-assets-cash" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="label" id="label2">
+                        <label for="label-curr-assets-inventory">Inventory:</label>
+                        <input type="text" id="input-curr-assets-inventory" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="label" id="label3">
+                        <label for="label-curr-assets-supplies">Supplies:</label>
+                        <input type="text" id="input-curr-assets-supplies" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="label" id="label4">
+                        <label for="label-curr-assets-temp">Temporary Investments:</label>
+                        <input type="text" id="input-curr-assets-temp" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="total" id="total-curr-assets">Total Current Assets:
+                        <span class="subtotal" id="sub-curr-assets"></span>
+                    </div>
+                    </form>
+                </div>
+            </div>
+           
+            <div class="title-left" id="title-invest">Investment Property and Equipment
+                <br><br><button class="button-left" id="add-invest" onclick="addInvest()">Add Investment Property and Equipment</button>
+                
+                <div class="box-invest" id="box-invest">
+                    <form action="#">
+                    <div class="label" id="label5">
+                        <label for="label-invest-land">Land:</label>
+                        <input type="text" id="input-invest-land" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="label" id="label6">
+                        <label for="label-invest-bldg">Building and Improvements:</label>
+                        <input type="text" id="input-invest-bldg" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="label" id="label7">
+                        <label for="label-invest-equip">Equipment:</label>
+                        <input type="text" id="input-invest-equip" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="label" id="label8">
+                        <label for="label-invest-temp">Temporary Investments:</label>
+                        <input type="text" id="input-invest-temp" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="total" id="total-invest">Total Investment Property and Equipment:
+                        <span class="subtotal" id="sub-invest"></span>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="title-left" id="title-intangibles">Intangibles
+                <br><br><button class="button-left" id="add-intang" onclick="addIntang()">Add Intangibles</button>
+                
+                <div class="box-intang" id="box-intang">
+                    <form action="#">
+                    <div class="label" id="label9">
+                        <label for="label-intang-trade">Trade Names:</label>
+                        <input type="text" id="input-intang-trade" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="label" id="label10">
+                        <label for="label-intang-goodwill">Goodwill:</label>
+                        <input type="text" id="input-intang-goodwill" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="total" id="total-intang">Total Intangibles:
+                        <span class="subtotal" id="sub-intang"></span>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="liabilities" id="liabilities"><h3>Liabilities</h3></div>
+            <div class="title-right" id="title-curr-liabs">Current Liabilities
+                <br><br><button class="button-right" id="add-curr-liabs" onclick="addCurrLiabs()">Add Current Liabilities</button>
+                
+                <div class="box-curr-liabs" id="box-curr-liabs">
+                    <form action="#">
+                    <div class="label" id="label11">
+                        <label for="label-curr-liabs-accounts">Accounts Payable:</label>
+                        <input type="text" id="input-curr-liabs-accounts" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="label" id="label12">
+                        <label for="label-curr-liabs-notes">Notes Payable:</label>
+                        <input type="text" id="input-curr-liabs-notes" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="label" id="label13">
+                        <label for="label-curr-liabs-interest">Interest Payable:</label>
+                        <input type="text" id="input-curr-liabs-interest" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="label" id="label14">
+                        <label for="label-curr-liabs-wages">Wages Payable:</label>
+                        <input type="text" id="input-curr-liabs-wages" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="label" id="label15">
+                        <label for="label-curr-liabs-expenses">Accrued Expenses:</label>
+                        <input type="text" id="input-curr-liabs-expenses" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="total" id="total-curr-liabs">Total Current Liabilities:
+                        <span class="subtotal" id="sub-curr-liabs"></span>
+                    </div>
+                </form>
+                </div>
+            </div>
+            
+            <div class="title-right" id="title-lt-liabs">Long-Term Liabilities
+                <br><br><button class="button-right" id="add-lt-liabs" onclick="addLTLiabs()">Add Long-Term Liabilities</button>
+                
+                <div class="box-lt-liabs" id="box-lt-liabs">
+                    <form action="#">
+                    <div class="label" id="label16">
+                        <label for="label-lt-liabs-notes">Notes Payable:</label>
+                        <input type="text" id="input-lt-liabs-notes" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="label" id="label17">
+                        <label for="label-lt-liabs-bonds">Bonds Payable:</label>
+                        <input type="text" id="input-lt-liabs-bonds" onkeyup="enableCalcButton()">
+                    </div>
+                    <div class="total" id="total-lt-liabs">Total Long-Term Liabilities:
+                        <span class="subtotal" id="sub-lt-liabs"></span>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="box-total-pos" id="box-total-pos">
+                <div class="title-right" id="title-total-pos">
+                    <div style="font-size:x-large;">Total Position</div>
+                    <br><button class="button-right" id="calc-pos" onclick="calcPos()" disabled>Calculate Position</button>
+                    <div class="total" id="label-total-assets">Total Assets:
+                        <span class="subtotal" id="sub-tot-assets"></span>
+                    </div>
+                    <div class="total" id="label-total-liabs">Total Liabilities:
+                        <span class="subtotal" id="sub-tot-liabs"></span>
+                    </div>
+                    <div class="total" id="label-pos">Position:
+                        <span class="subtotal" id="sub-pos"></span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="footer" id="footer">&copy Bellarmine University 2022</div>
+
+        <script src='js/properties.js'></script>
+    </body>
+</html>
